@@ -12,8 +12,6 @@ $('.kirim').click(function(){
 	localStorage.setItem('judul-buku', $('.judul-buku').val())
 	localStorage.setItem('genre', $('.genre').val())
 	localStorage.setItem('premis', $('.premis').val())
-
-	swal('Selesai')
 })
 
 // autocomplete(document.getElementById("myInput"), countries);
