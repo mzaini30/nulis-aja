@@ -31,19 +31,23 @@
 	</div>
 
 	<div class="container">
-		<div class="form-group"><label for="">Nama</label><input type="text" class="form-control"></div>
-		<div class="form-group"><label for="">Judul Buku</label><input type="text" class="form-control"></div>
-		<div class="form-group"><label for="">Genre</label><input type="text" class="form-control"></div>
-		<div class="form-group"><label for="">Premis</label><input type="text" class="form-control"></div>
-		<div class="form-group"><label for="">Jumlah Halaman</label><input type="number" class="form-control"></div>
-		<center>
-			<p><span class="btn btn-default">Kirim</span></p>
-		</center>
+		<form autocomplete="off">
+			<div class="form-group autocomplete"><label for="">Nama</label><input type="text" class="form-control" id="nama"></div>
+			<div class="form-group"><label for="">Judul Buku</label><input type="text" class="form-control"></div>
+			<div class="form-group"><label for="">Genre</label><input type="text" class="form-control"></div>
+			<div class="form-group"><label for="">Premis</label><input type="text" class="form-control"></div>
+			<div class="form-group"><label for="">Jumlah Halaman</label><input type="number" class="form-control"></div>
+			<center>
+				<p><span class="btn btn-default">Kirim</span></p>
+			</center>
+		</form>
 	</div>
 	<br>
 
+	<script type="text/javascript" src="app/list.js"></script>
 	<script type="text/javascript" src="vendor/jquery/jquery.min.js"></script>
 	<script type="text/javascript" src="vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="vendor/auto-complete/auto-complete.js"></script>
 	<script type="text/javascript" src="app/app.js"></script>
 </body>
 </html>
