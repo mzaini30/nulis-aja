@@ -80,6 +80,12 @@ $('.kirim').click(function(){
 	ke_atas()
 	grafik()
 	// location.reload()
+	kirim_nama = $('.nama').val().replace(/ /g, '+')
+	kirim_judul_buku = $('.judul-buku').val().replace(/ /g, '+')
+	kirim_genre = $('.genre').val().replace(/ /g, '+')
+	kirim_premis = $('.premis').val().replace(/ /g, '+')
+	kirim_jumlah_halaman = $('.jumlah-halaman').val().replace(/ /g, '+')
+	location.href = 'https://docs.google.com/forms/d/e/1FAIpQLSeybQuZ_-aldTdw3FwwhAIuNc_rj9kGn1V0cOTwSMhwyFbeRg/viewform?usp=pp_url&entry.1254118809=' + kirim_nama + '&entry.1071710605=' + kirim_judul_buku + '&entry.1653769640=' + kirim_genre + '&entry.46621118=' + kirim_premis + '&entry.816932494=' + kirim_jumlah_halaman
 })
 
 // autocomplete(document.getElementById("myInput"), countries);
