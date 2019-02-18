@@ -6,6 +6,10 @@ body {
 	max-width: 800px;
 }
 
-.keterangan {
-	font-weight: normal;
+.angka {
+	color: rgba(153, 102, 255, 1);
+}
+
+.panel-angka {
+	border-color: rgba(255, 206, 86, 0.6);
 }
