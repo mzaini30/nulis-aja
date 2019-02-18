@@ -55,6 +55,8 @@ grafik = function(){
 	        }
 	    }
 	});
+
+	$('.angka').html(Math.max(...data_grafik.map(Number)))
 }
 
 if (localStorage.getItem('jumlah-halaman') === null){
