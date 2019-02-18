@@ -2,6 +2,61 @@ $('.navbar-nav a').click(function(){
 	$('.navbar-toggle').click()
 })
 
+ke_atas = function(){
+	$('html, body').animate({
+		scrollTop: 0
+	}, 700)
+}
+
+grafik = function(){
+	data_grafik = JSON.parse(localStorage.getItem('jumlah-halaman')).reverse()
+	var ctx = document.getElementById("myChart").getContext('2d');
+	var myChart = new Chart(ctx, {
+	    type: 'bar',
+	    data: {
+	        labels: ["", "", "", "", "", ""],
+	        datasets: [{
+	            label: 'Jumlah Halaman',
+	            // data: [12, 19, 3, 5, 2, 3],
+	            data: [
+	            	data_grafik[5],
+	            	data_grafik[4],
+	            	data_grafik[3],
+	            	data_grafik[2],
+	            	data_grafik[1],
+	            	data_grafik[0]
+	            ],
+	            backgroundColor: [
+	                'rgba(255, 99, 132, 0.2)',
+	                'rgba(54, 162, 235, 0.2)',
+	                'rgba(255, 206, 86, 0.2)',
+	                'rgba(75, 192, 192, 0.2)',
+	                'rgba(153, 102, 255, 0.2)',
+	                'rgba(255, 159, 64, 0.2)'
+	            ],
+	            borderColor: [
+	                'rgba(255,99,132,1)',
+	                'rgba(54, 162, 235, 1)',
+	                'rgba(255, 206, 86, 1)',
+	                'rgba(75, 192, 192, 1)',
+	                'rgba(153, 102, 255, 1)',
+	                'rgba(255, 159, 64, 1)'
+	            ],
+	            borderWidth: 1
+	        }]
+	    },
+	    options: {
+	        scales: {
+	            yAxes: [{
+	                ticks: {
+	                    beginAtZero:true
+	                }
+	            }]
+	        }
+	    }
+	});
+}
+
 if (localStorage.getItem('jumlah-halaman') === null){
 	localStorage.setItem('jumlah-halaman', '[]')
 }
@@ -10,6 +65,7 @@ $('.nama').val(localStorage.getItem('nama'))
 $('.judul-buku').val(localStorage.getItem('judul-buku'))
 $('.genre').val(localStorage.getItem('genre'))
 $('.premis').val(localStorage.getItem('premis'))
+grafik()
 
 $('.kirim').click(function(){
 	localStorage.setItem('nama', $('.nama').val())
@@ -19,6 +75,8 @@ $('.kirim').click(function(){
 	data_jumlah_halaman = JSON.parse(localStorage.getItem('jumlah-halaman'))
 	data_jumlah_halaman.push($('.jumlah-halaman').val())
 	localStorage.setItem('jumlah-halaman', JSON.stringify(data_jumlah_halaman))
+	ke_atas()
+	grafik()
 	// location.reload()
 })
 
