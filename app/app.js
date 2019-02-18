@@ -4,3 +4,4 @@ $('.navbar-nav a').click(function(){
 
 // autocomplete(document.getElementById("myInput"), countries);
 autocomplete(document.getElementById('nama'), nama)
+autocomplete(document.getElementById('genre'), genre)
