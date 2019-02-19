@@ -8,6 +8,22 @@ ke_atas = function(){
 	}, 700)
 }
 
+update_persen = function(){
+	data = JSON.parse(localStorage.getItem('jumlah-halaman')).map(Number)
+	jumlah = 0
+	for (n in data){
+		jumlah += data[n]
+	}
+	sudah_selesai = jumlah // total jumlah halaman semuanya
+	semua = Number(localStorage.getItem('target-halaman')) // target halaman
+	if (semua > 0){
+		persen_selesai = Math.round(sudah_selesai / semua * 100)	
+	} else {
+		persen_selesai = 0
+	}
+	$('.progress-jumlah-halaman').attr('aria-valuenow', persen_selesai).css('width', persen_selesai + '%')
+}
+
 grafik = function(){
 	data_grafik = JSON.parse(localStorage.getItem('jumlah-halaman')).reverse()
 	var ctx = document.getElementById("myChart").getContext('2d');
@@ -69,18 +85,22 @@ $('.nama').val(localStorage.getItem('nama'))
 $('.judul-buku').val(localStorage.getItem('judul-buku'))
 $('.genre').val(localStorage.getItem('genre'))
 $('.premis').val(localStorage.getItem('premis'))
+$('.target-halaman').val(localStorage.getItem('target-halaman'))
 grafik()
+update_persen()
 
 $('.kirim').click(function(){
 	localStorage.setItem('nama', $('.nama').val())
 	localStorage.setItem('judul-buku', $('.judul-buku').val())
 	localStorage.setItem('genre', $('.genre').val())
 	localStorage.setItem('premis', $('.premis').val())
+	localStorage.setItem('target-halaman', $('.target-halaman').val())
 	data_jumlah_halaman = JSON.parse(localStorage.getItem('jumlah-halaman'))
 	data_jumlah_halaman.push($('.jumlah-halaman').val())
 	localStorage.setItem('jumlah-halaman', JSON.stringify(data_jumlah_halaman))
 	ke_atas()
 	grafik()
+	update_persen()
 	// location.reload()
 	kirim_nama = $('.nama').val().replace(/ /g, '+')
 	kirim_judul_buku = $('.judul-buku').val().replace(/ /g, '+')
