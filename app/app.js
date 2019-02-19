@@ -89,6 +89,10 @@ $('.target-halaman').val(localStorage.getItem('target-halaman'))
 grafik()
 update_persen()
 
+rand = quote[Math.floor(Math.random() * quote.length)]
+$('.quote-isi').html(rand[0])
+$('.quote-author').html(rand[1])
+
 $('.kirim').click(function(){
 	localStorage.setItem('nama', $('.nama').val())
 	localStorage.setItem('judul-buku', $('.judul-buku').val())

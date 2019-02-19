@@ -46,3 +46,18 @@ genre = [
 	'Fiksi',
 	'NonFiksi'
 ]
+
+quote = [
+	[
+		'Badan bisa mati, tulisanmu abadi.',
+		'Hiday Nur'
+	],
+	[
+		'Tulisanku takkan pernah mengkhianatiku.',
+		'Zen'
+	],
+	[
+		'Penciptaan karya (apapun itu) bukan perkara sebagai pembanding antara siapa yang baik, siapa yang buruk, tetapi soal sejauh mana manusia mampu mencapai versi terbaik dari dirinya, untuk kemudian mengabadikan itu (versi terbaiknya) ke dalam bentuk yang mampu memberi katarsis (pembaruan rohani); termasuk menulis.',
+		'Dymar Mahafa'
+	]
+]
