@@ -66,6 +66,7 @@ if (localStorage.getItem('jumlah-halaman') === null){
 $('.nama').val(localStorage.getItem('nama'))
 $('.judul-buku').val(localStorage.getItem('judul-buku'))
 $('.genre').val(localStorage.getItem('genre'))
+// $('.genre').find([value=localStorage.getItem('genre')]).attr('selected')
 $('.premis').val(localStorage.getItem('premis'))
 $('.target-halaman').val(localStorage.getItem('target-halaman'))
 grafik()
@@ -93,8 +94,7 @@ $('.kirim').click(function(){
 	kirim_genre = $('.genre').val().replace(/ /g, '+')
 	kirim_premis = $('.premis').val().replace(/ /g, '+')
 	kirim_jumlah_halaman = $('.jumlah-halaman').val().replace(/ /g, '+')
-	// location.href = 'https://docs.google.com/forms/d/e/1FAIpQLSeybQuZ_-aldTdw3FwwhAIuNc_rj9kGn1V0cOTwSMhwyFbeRg/viewform?usp=pp_url&entry.1254118809=' + kirim_nama + '&entry.1071710605=' + kirim_judul_buku + '&entry.1653769640=' + kirim_genre + '&entry.46621118=' + kirim_premis + '&entry.816932494=' + kirim_jumlah_halaman
-	location.href = 'https://docs.google.com/forms/d/e/1FAIpQLSefJjGDYt8FGF8VtmReIMHYPSEAJ-9qD2i_Zbeyy42qjj_MPg/viewform?usp=pp_url&entry.1254118809=' + kirim_nama + '&entry.1071710605=' + kirim_judul_buku + '&entry.1653769640=' + kirim_genre + '&entry.46621118=' + kirim_premis + '&entry.816932494=' + kirim_jumlah_halaman
+	// location.href = 'https://docs.google.com/forms/d/e/1FAIpQLSefJjGDYt8FGF8VtmReIMHYPSEAJ-9qD2i_Zbeyy42qjj_MPg/viewform?usp=pp_url&entry.1254118809=' + kirim_nama + '&entry.1071710605=' + kirim_judul_buku + '&entry.1653769640=' + kirim_genre + '&entry.46621118=' + kirim_premis + '&entry.816932494=' + kirim_jumlah_halaman
 })
 
 // autocomplete(document.getElementById("myInput"), countries);
